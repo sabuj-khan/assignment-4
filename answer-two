@@ -1,0 +1,26 @@
+<?php 
+
+function joinTwoName($name1, $name2) {
+    $name1Len = strlen($name1);
+    $name2Len = strlen($name2);
+    
+    if ($name2Len > $name1Len) {
+     
+      $temp = $name1;
+      $name1 = $name2;
+      $name2 = $temp;     
+      $name1Len = strlen($name1);
+      $name2Len = strlen($name2);
+    }
+    
+    $result = substr($name1, 0, $name1Len - $name2Len) . $name2;
+    
+    return $result;
+  }
+
+  $fname = "Bangladesh";
+  $sname = "Australia";
+
+  $oneName = joinTwoName($fname, $sname );
+
+  echo $oneName;
